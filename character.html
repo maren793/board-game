@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game - Characters</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <div class="container text-center">
+        <img src="images/SVG/Asset%201.svg">
+        <h3>Choose your characters</h3>
+    </div>
+
+
+
+    <div class="card-deck">
+        <div class="card" id="player1">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" id="token1" src="images/SVG/token1.svg">
+                <p class="card-text" id="character1"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token2.svg">
+                <p class="card-text" id="character2"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token3.svg">
+                <p class="card-text" id="character3"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token4.svg">
+                <p class="card-text" id="character4"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token5.svg">
+                <p class="card-text" id="character5"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-deck mt-4">
+        <div class="card">
+
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token6.svg">
+                <p class="card-text" id="character6"></p>
+            </div>
+            <button class="btn btn-dark btn-block">Select</button>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token7.svg">
+                <p class="card-text" id="character7"></p>
+            </div>
+            <button class="btn btn-dark btn-block">Select</button>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token8.svg">
+                <p class="card-text" id="character8"></p>
+            </div>
+            <button class="btn btn-dark btn-block">Select</button>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" src="images/SVG/token9.svg">
+                <p class="card-text" id="character9"></p>
+            </div>
+            <button class="btn btn-dark btn-block">Select</button>
+        </div>
+        <div class="card">
+            <img class="card-img-top">
+            <div class="card-img-overlay text-center">
+                <img class="tokens" id="token" src="images/SVG/token10.svg">
+                <p class="card-text" id="character10"></p>
+            </div>
+            <button class="btn btn-dark btn-block">Select</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        //Fetch 10 character from the API
+        fetch('https://anapioficeandfire.com/api/characters/583')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch1 => {
+                var characterOne = document.getElementById('character1');
+                character1.innerHTML += "<h1> " + ch1.name + "</h1>";
+                character1.innerHTML += "<p>Gender: " + ch1.gender + "</p>";
+                character1.innerHTML += "<p>Born: " + ch1.born + "</p>";
+                character1.innerHTML += "<p>Title: " + ch1.titles + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/271')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch2 => {
+                var characterTwo = document.getElementById('character2');
+                character2.innerHTML += "<h1> " + ch2.name + "</h1>";
+                character2.innerHTML += "<p>Gender: " + ch2.gender + "</p>";
+                character2.innerHTML += "<p>Born: " + ch2.born + "</p>";
+                character2.innerHTML += "<p>Title: " + ch2.titles + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/1052')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch3 => {
+                var characterThree = document.getElementById('character3');
+                character3.innerHTML += "<h1> " + ch3.name + "</h1>";
+                character3.innerHTML += "<p>Gender: " + ch3.gender + "</p>";
+                character3.innerHTML += "<p>Born: " + ch3.born + "</p>";
+                character3.innerHTML += "<p>Title: " + ch3.titles[0] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/148')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch4 => {
+                var characterFour = document.getElementById('character4');
+                character4.innerHTML += "<h1> " + ch4.name + "</h1>";
+                character4.innerHTML += "<p>Gender: " + ch4.gender + "</p>";
+                character4.innerHTML += "<p>Born: " + ch4.born + "</p>";
+                character4.innerHTML += "<p>Title: " + ch4.titles + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/957')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch5 => {
+                var characterFive = document.getElementById('character5');
+                character5.innerHTML += "<h1> " + ch5.name + "</h1>";
+                character5.innerHTML += "<p>Gender: " + ch5.gender + "</p>";
+                character5.innerHTML += "<p>Born: " + ch5.born + "</p>";
+                character5.innerHTML += "<p>Title: " + ch5.titles + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/529')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch6 => {
+                var characterSix = document.getElementById('character6');
+                character6.innerHTML += "<h1> " + ch6.name + "</h1>";
+                character6.innerHTML += "<p>Gender: " + ch6.gender + "</p>";
+                character6.innerHTML += "<p>Born: " + ch6.born + "</p>";
+                character6.innerHTML += "<p>Title: " + ch6.titles[1] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/238')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch7 => {
+                var characterSeven = document.getElementById('character7');
+                character7.innerHTML += "<h1> " + ch7.name + "</h1>";
+                character7.innerHTML += "<p>Gender: " + ch7.gender + "</p>";
+                character7.innerHTML += "<p>Born: " + ch7.born + "</p>";
+                character7.innerHTML += "<p>Title: " + ch7.titles[3] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/823')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch8 => {
+                var characterEight = document.getElementById('character8');
+                character8.innerHTML += "<h1> " + ch8.name + "</h1>";
+                character8.innerHTML += "<p>Gender: " + ch8.gender + "</p>";
+                character8.innerHTML += "<p>Born: " + ch8.born + "</p>";
+                character8.innerHTML += "<p>Title: " + ch8.titles[1] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/1442')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch9 => {
+                var characterNine = document.getElementById('character9');
+                character9.innerHTML += "<h1> " + ch9.name + "</h1>";
+                character9.innerHTML += "<p>Gender: " + ch9.gender + "</p>";
+                character9.innerHTML += "<p>Born: " + ch9.born + "</p>";
+                character9.innerHTML += "<p>Title: " + ch9.titles[1] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        fetch('https://anapioficeandfire.com/api/characters/565')
+            .then((response) => {
+                return response.json()
+            })
+            .then(ch10 => {
+                var characterTen = document.getElementById('character10');
+                character10.innerHTML += "<h1> " + ch10.name + "</h1>";
+                character10.innerHTML += "<p>Gender: " + ch10.gender + "</p>";
+                character10.innerHTML += "<p>Born: " + ch10.born + "</p>";
+                character10.innerHTML += "<p>Title: " + ch10.titles[0] + "</p>";
+            })
+            .catch(err => console.log(err))
+
+        //Select game-character
+
+         var buttons = document.getElementsByClassName("btn");
+        
+        console.log(btn);
+    
+        
+      
+        
+    </script>
+</body>
+
+</html>

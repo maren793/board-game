@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+//Variables
+$background-colour: white;
+$text-colour: white;
+
+
+body{
+    background-color: $background-colour;
+    background-image: url(images/paper-664024_1920.jpg);
+    color: aliceblue;
+    max-width: 1600px;
+    margin: auto;
+    font-family: 'Special Elite', cursive;
+}
+
+h1 {
+    font-family: 'Marck Script', cursive;
+}
+
+h3{
+    color: black;
+}
+
+.tokens {
+    height: 48px;
+}
+
+.theDice {
+    width: 32px;
+    background-color: lightcoral;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
+  transition: 0.3s;
+ /* Add gradient to border */  
+border: 10px solid transparent;
+  -moz-border-image: -moz-linear-gradient(left, #349EFE 0%, #14375A 100%);
+  -webkit-border-image: -webkit-linear-gradient(left, #349EFE 0%, #14375A 100%);
+  border-image: linear-gradient(to middle, #349EFE 0%, #14375A 100%);
+  border-image-slice: 1;
+   
+   
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 10px 10px 10px 10px black; //0 8px 16px 0 rgba(0,0,0,0.30);
+    cursor: pointer;
+}
+/* Add pattern to the cards */
+img.card-img-top {
+    background-color: #3d9cbf;
+background-image: url("https://www.transparenttextures.com/patterns/dimension.png");
+    height: 400px;
+   
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
